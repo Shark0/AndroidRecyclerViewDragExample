@@ -3,13 +3,10 @@ package org.base.example.adapter.viewtype;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-
 import org.base.example.R;
 import org.base.example.adapter.TheOneAdapter;
-import org.base.example.adapter.touchhelper.HorizontalTouchHelperCallback;
 import org.base.example.adapter.touchhelper.TouchListener;
 import org.base.example.adapter.touchhelper.VerticalTouchHelperCallback;
 import org.base.example.entity.DayEntity;
@@ -73,7 +70,6 @@ public class DayViewType implements TheOneAdapter.ViewTypeInterface, LandscapeVi
     public void onContentItemLongClick(int index) {
 
     }
-
 
     private class ContentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener, LandscapeViewType.LandScapeViewTypeListener, TouchListener {
         private ContentViewTypeListener listener;

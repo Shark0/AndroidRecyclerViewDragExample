@@ -3,7 +3,9 @@ package org.base.example;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.widget.Toast;
 
@@ -34,7 +36,7 @@ public class MainActivity extends Activity implements DayViewType.ContentViewTyp
     }
 
     private void init() {
-        dayList = generateDayList(20);
+        dayList = generateDayList(5);
     }
 
     private void bindContentRecyclerView() {
@@ -50,6 +52,9 @@ public class MainActivity extends Activity implements DayViewType.ContentViewTyp
         itemTypeList.add(new DayViewType(this, dayList));
         adapter = new TheOneAdapter(this, itemTypeList);
         recyclerView.setAdapter(adapter);
+
+        SnapHelper snapHelper = new PagerSnapHelper();
+        snapHelper.attachToRecyclerView(recyclerView);
     }
 
     public List<DayEntity> generateDayList(int size) {
